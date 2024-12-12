@@ -1,12 +1,16 @@
-# ListaDeAtividades
+# Lista de Tarefas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
+Este é um projeto de lista de tarefas desenvolvido com **Angular 18**, que se conecta a uma API utilizando autenticação por token. Com esta aplicação, é possível criar, editar e deletar tarefas de forma eficiente e segura.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Adicionar Tarefas**: Crie novas tarefas com informações personalizadas.
+- **Editar Tarefas**: Atualize os detalhes das tarefas existentes.
+- **Excluir Tarefas**: Remova tarefas que não são mais necessárias.
+- **Autenticação Segura**: A aplicação utiliza um token para autenticação, garantindo acesso seguro à API.
 
-## Further help
+## Tecnologias Utilizadas
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
+- **Angular 18**: Framework para desenvolvimento frontend.
+- **TypeScript**: Linguagem utilizada no desenvolvimento.
+- **API Rest**: Comunicação com o backend utilizando token.
