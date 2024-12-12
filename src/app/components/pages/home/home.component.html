@@ -1,0 +1,69 @@
+<body>
+  <app-header />
+  <app-sidebar />
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+    </div><!-- End Page Title -->
+
+    <section>
+      <div class="card-body">
+        <table class="table datatable">
+          <thead>
+            <tr>
+              <th><b>N</b>ome</th>
+              <th><b>D</b>escrição</th>
+              <th><b>H</b>orário</th>
+              <th><b>C</b>oncluída</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of tarefas; let i = index">
+              <td>{{ item.nome }}</td>
+              <td>{{ item.descricao }}</td>
+              <td>{{ item.horario }}</td>
+              <td>
+                <i [ngClass]="item.class" [ngStyle]="{color: item.color}" (click)="check(i)"></i>
+              </td>
+              <td>
+                <i class="bi bi-pencil-square" (click)="editTask(i)"></i>
+              </td>
+              <td>
+                <i class="bi bi-x-square-fill" (click)="openDeleteModal(i)" data-bs-toggle="modal" data-bs-target="#verticalycentered"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+      <!-- Modal -->
+      <div class="modal fade" id="verticalycentered" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Excluir tarefa</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="font-size: 1.3em;">
+              Deseja realmente excluir a tarefa "{{ tarefaSelecionada?.nome }}"? Essa ação não poderá ser revertida.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+              <button type="button" class="btn btn-primary" (click)="confirmDeleteTask()" style="background-color: red; border: none;" data-bs-dismiss="modal">
+                Sim, Excluir tarefa
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+  </main><!-- End #main -->
+  <app-footer />
+
+</body>

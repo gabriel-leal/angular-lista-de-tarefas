@@ -1,0 +1,47 @@
+<body>
+<app-header />
+<app-sidebar />
+
+    <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Usuários</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th>
+                      <b>N</b>ome
+                    </th>
+                    <th>Email</th>
+                    <th>ID</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of usuarios; let i = index">
+                      <td>{{ item.firstName + " " + item.lastName }}</td>
+                      <td>{{ item.email }}</td>
+                      <td> {{ item.id }}</td> 
+                      <td><i class="bi bi-x-square-fill" (click)="deleteUser(i)"></i></td>
+                    </tr>
+                </tbody>
+              </table> <!-- End Table with stripped rows -->
+              <a href="/profiles/newProfile" class="btn btn-success">Criar Usuário</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <app-footer />
+</body>

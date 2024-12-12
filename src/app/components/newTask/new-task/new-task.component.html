@@ -1,0 +1,62 @@
+<body>
+  <app-header />
+  <app-sidebar />
+
+  <main id="main" class="main">
+
+    <div class="pagetitle ms-1">
+      <h1>Nova Tarefa</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-10">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Crie uma nova tarefa</h5>
+
+              <!-- General Form Elements -->
+              <form [formGroup]="form">
+                <div class="row mb-3">
+                  <label for="inputnome" class="col-sm-2 col-form-label">Nome</label>
+                  <div class="col-sm-10">
+                    <input type="text" formControlName="nome" class="form-control">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputdescricao" class="col-sm-2 col-form-label">Descrição</label>
+                  <div class="col-sm-10">
+                    <input type="text" formControlName="descricao" class="form-control">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputhorario" class="col-sm-2 col-form-label">Horário</label>
+                  <div class="col-sm-10">
+                    <input type="time" formControlName="horario" class="form-control">
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label"></label>
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary" [disabled]="form.invalid" (click)="submit()">Criar tarefa</button>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <span #credFail class="invalid-feedback">Erro ao cadastrar tarefa, tente novamente mais tarde! :(</span>
+                </div>
+
+              </form><!-- End General Form Elements -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <app-footer />
